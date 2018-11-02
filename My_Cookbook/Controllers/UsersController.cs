@@ -10,12 +10,12 @@ namespace My_Cookbook.Controllers
     public class UsersController : Controller
     {
         // GET: Users
-        public ViewResult Index()
+        public ActionResult Index()
         {
             //var user = new User() { Name = "Mike" };
 
             //return View(user);
-            return View("Index");
+            return View();
         }
     }
 }

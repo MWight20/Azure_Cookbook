@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201811021633587_InitialModel.Designer.cs">
       <DependentUpon>201811021633587_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811021729111_SeedAdmin.cs" />
+    <Compile Include="Migrations\201811021729111_SeedAdmin.Designer.cs">
+      <DependentUpon>201811021729111_SeedAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811021808209_AddRecipeModelAndRecipeTypeModel.cs" />
+    <Compile Include="Migrations\201811021808209_AddRecipeModelAndRecipeTypeModel.Designer.cs">
+      <DependentUpon>201811021808209_AddRecipeModelAndRecipeTypeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -303,6 +311,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811021633587_InitialModel.resx">
       <DependentUpon>201811021633587_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811021729111_SeedAdmin.resx">
+      <DependentUpon>201811021729111_SeedAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811021808209_AddRecipeModelAndRecipeTypeModel.resx">
+      <DependentUpon>201811021808209_AddRecipeModelAndRecipeTypeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,6 +7,8 @@
 ```
 > InitialModel migration for IdentityRole setup.
 > Modified IdentityRole MVC code to allow login with "Username" instead of "Email".
+> Admin role seeded into database
+> Migrations: Model update for Recipe and RecipeType.
 ```
 
 

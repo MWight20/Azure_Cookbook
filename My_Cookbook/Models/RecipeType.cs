@@ -7,9 +7,8 @@ namespace My_Cookbook.Models
 {
     public class RecipeType
     {
-        //public int Id { get; set; }
-        
-        //public string Name { get; set; }
-        
+        public int Id { get; set; }
+
+        public string Name { get; set; }
     }
 }
