@@ -20,6 +20,9 @@ namespace My_Cookbook.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //public DbSet<Recipe> Recipe { get; set; }
+        //public DbSet<RecipeType> RecipeType { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
