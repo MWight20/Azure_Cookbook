@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace My_Cookbook.Controllers
 {
@@ -10,6 +12,15 @@ namespace My_Cookbook.Controllers
     {
         public ActionResult Index()
         {
+            var Username = User.Identity.GetUserName();
+            if (Username == "")
+            {
+                Username = "No logged in user.";
+            }
+                ViewBag.UserName = Username;
+            
+            
+
             return View();
         }
 
