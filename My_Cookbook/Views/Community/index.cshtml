@@ -4,5 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Community index</h2>
+<h2>Community Recipe List</h2>
+
+<div class="RecipeSubmit">
+    <p>
+        Click here to submit a new recipe:
+        @Html.ActionLink("Submit a recipe", "New", "Recipe", null, new { @class = "btn btn-primary" })
+    </p>
+</div>
 

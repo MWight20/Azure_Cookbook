@@ -9,6 +9,12 @@
         @ViewBag.UserName
     </p>
 </div>
+<div class="RecipeSubmit">
+    <p>
+        Click here to submit a new recipe:
+        @Html.ActionLink("Submit a recipe", "New", "Recipe", null, new { @class = "btn btn-primary" })
+    </p>
+</div>
 
 
 @*<div class="jumbotron">

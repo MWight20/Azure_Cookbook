@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace My_Cookbook.Models
     public class ApplicationUser : IdentityUser
     {
 
+        //public virtual ICollection<Recipe> UserRecipes { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -22,8 +25,8 @@ namespace My_Cookbook.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Recipe> Recipe { get; set; }
-        public DbSet<RecipeType> RecipeType { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<RecipeType> RecipeTypes { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

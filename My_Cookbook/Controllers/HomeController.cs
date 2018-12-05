@@ -15,7 +15,7 @@ namespace My_Cookbook.Controllers
             var Username = User.Identity.GetUserName();
             if (Username == "")
             {
-                Username = "No logged in user.";
+                Username = "There is no user currently logged in.";
             }
                 ViewBag.UserName = Username;
             

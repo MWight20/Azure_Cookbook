@@ -1,6 +1,34 @@
 ﻿
 # Dev notes
 
+**12/4/2018**
+```
+> Recipes api written for GET, POST, PUT, and DELETE
+> Dummy recipe inserted into database
+> GET api tested in Postman
+```
+
+**12/3/2018**
+```
+> Built form for submitting new recipe
+```
+
+**12/2/2018**
+```
+> Further functionality simplification through model updating
+> Possible custom username submission through guest, rather than current logged in
+   user for sake of continuing on.
+> Populate RecipeTypes
+> Further understanding viewmodels and routing to recipeForm
+```
+
+**11/27/2018**
+```
+> Model Updating, researching to understand applicationUser
+> Simplifying functionality to build onto later
+```
+
+
 **11/8/2018**
 ```
 > Did modifying to Recipe Model - haven't updated with migration yet
