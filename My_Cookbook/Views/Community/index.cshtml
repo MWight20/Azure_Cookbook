@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<My_Cookbook.Models.Recipe>
+
 @{
     ViewBag.Title = "index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,4 +13,29 @@
         @Html.ActionLink("Submit a recipe", "New", "Recipe", null, new { @class = "btn btn-primary" })
     </p>
 </div>
+
+
+<table id="recipes" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Submitted By</th>
+            <th>Description</th>
+
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var recipe in Model)
+        {
+        <tr>
+            <td>@Html.ActionLink(recipe.Name, "Details", "Recipe", new { id = recipe.Id }, null) </td>
+            <td>@Html.ActionLink(recipe.Username, "UserRecipe", "Users", new { username = recipe.Username }, null)</td>
+            <td>@recipe.Description</td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
 

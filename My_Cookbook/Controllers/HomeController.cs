@@ -12,12 +12,12 @@ namespace My_Cookbook.Controllers
     {
         public ActionResult Index()
         {
-            var Username = User.Identity.GetUserName();
-            if (Username == "")
-            {
-                Username = "There is no user currently logged in.";
-            }
-                ViewBag.UserName = Username;
+            //var Username = User.Identity.GetUserName();
+            //if (Username == "")
+            //{
+            //    Username = "There is no user currently logged in.";
+            //}
+            //    ViewBag.UserName = Username;
             
             
 

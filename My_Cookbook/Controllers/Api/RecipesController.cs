@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using AutoMapper;
+using My_Cookbook.Dtos;
 using My_Cookbook.Models;
 
 namespace My_Cookbook.Controllers.Api
@@ -18,42 +20,50 @@ namespace My_Cookbook.Controllers.Api
         }
 
         // GET /api/recipes
-        public IEnumerable<Recipe> GetRecipes()
+        public IEnumerable<RecipeDto> GetRecipes()
         {
-            return _context.Recipes.ToList();
+            return _context.Recipes.ToList().Select(Mapper.Map<Recipe,RecipeDto>);
         }
 
         // GET /api/recipes/1
-        public Recipe GetRecipe(int id)
+        public IHttpActionResult GetRecipe(int id)
         {
             var recipe = _context.Recipes.SingleOrDefault(c => c.Id == id);
 
             if (recipe == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
             
-            return recipe;
+            return Ok(Mapper.Map<Recipe, RecipeDto> (recipe));
         }
 
         // POST /api/recipes
         [HttpPost]
-        public Recipe CreateRecipe(Recipe recipe)
+        public IHttpActionResult CreateRecipe(RecipeDto recipeDto)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest(); ;
             }
 
+            if (recipeDto.Username == "" || recipeDto.Username == null)
+            {
+                recipeDto.Username = "Anonymous";
+            }
+
+            var recipe = Mapper.Map<RecipeDto, Recipe>(recipeDto);
             _context.Recipes.Add(recipe);
             _context.SaveChanges();
 
-            return recipe;
+            recipeDto.Id = recipe.Id;
+
+            return Created(new Uri(Request.RequestUri + "/" + recipe.Id), recipeDto );
         }
 
         // PUT /api/recipes/1
         [HttpPut]
-        public void UpdateRecipe(int id, Recipe recipe)
+        public void UpdateRecipe(int id, RecipeDto recipeDto)
         {
             if (!ModelState.IsValid)
             {
@@ -67,14 +77,19 @@ namespace My_Cookbook.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            recipeInDb.Name = recipe.Name;
-            recipeInDb.RecipeTypeId = recipe.RecipeTypeId;
-            recipeInDb.PrepTime = recipe.PrepTime;
-            recipeInDb.CookTime = recipe.CookTime;
-            recipeInDb.Description = recipe.Description;
-            recipeInDb.Directions = recipe.Directions;
-            recipeInDb.Ingredients = recipe.Ingredients;
-            recipeInDb.Username = recipe.Username;
+            //This line can be simplified to removing the <RecipeDto, Recipe>
+            Mapper.Map<RecipeDto, Recipe>(recipeDto, recipeInDb);
+
+            // The line above means we dont need to track changes via assignment, we're doing it via mapping instead.
+
+            //recipeInDb.Name = recipeDto.Name;
+            //recipeInDb.RecipeTypeId = recipeDto.RecipeTypeId;
+            //recipeInDb.PrepTime = recipeDto.PrepTime;
+            //recipeInDb.CookTime = recipeDto.CookTime;
+            //recipeInDb.Description = recipeDto.Description;
+            //recipeInDb.Directions = recipeDto.Directions;
+            //recipeInDb.Ingredients = recipeDto.Ingredients;
+            //recipeInDb.Username = recipeDto.Username;
 
             _context.SaveChanges();
         }
@@ -93,6 +108,8 @@ namespace My_Cookbook.Controllers.Api
             _context.Recipes.Remove(recipeInDb);
             _context.SaveChanges();
         }
+
+        
 
     }
 }

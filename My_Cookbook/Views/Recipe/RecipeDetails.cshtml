@@ -1,0 +1,13 @@
+﻿@model My_Cookbook.Models.Recipe
+@{
+    ViewBag.Title = "RecipeDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RecipeDetails</h2>
+
+<li>Name: @Model.Name</li>
+<li>Description: @Model.Description</li>
+<li>Ingredients: @Model.Ingredients</li>
+<li>Directions: @Model.Directions</li>
+

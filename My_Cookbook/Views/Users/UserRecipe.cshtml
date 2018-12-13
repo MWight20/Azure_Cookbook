@@ -1,0 +1,31 @@
+﻿@model IEnumerable<My_Cookbook.Models.Recipe>
+@{
+    ViewBag.Title = "userRecipes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.TargetUser's Recipes</h2>
+
+@foreach(var recipe in Model)
+{
+    
+    <h1>
+        @Html.ActionLink(recipe.Name, "Details", "recipe", new { id = recipe.Id }, null)
+    </h1>
+    
+    <li>
+        @recipe.Description
+    </li>
+   
+    @*<div class=@recipe.Name id=@recipe.Id>
+        <h1>@recipe.Name</h1>
+        <p>Type of dish: @recipe.RecipeType.Name</p>
+        <p>Prep Time: @recipe.PrepTime Min.</p>
+        <p>Cook Time: @recipe.CookTime Min.</p>
+        <p>About: @recipe.Description</p>
+        <p>What you'll need: @recipe.Ingredients</p>
+        <p>Instructions: @recipe.Directions</p>
+
+    </div>*@
+}
+

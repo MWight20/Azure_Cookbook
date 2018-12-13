@@ -11,9 +11,17 @@
 </div>
 <div class="RecipeSubmit">
     <p>
-        Click here to submit a new recipe:
-        @Html.ActionLink("Submit a recipe", "New", "Recipe", null, new { @class = "btn btn-primary" })
+        To submit a new recipe: @Html.ActionLink("Click here", "New", "Recipe", null, new { @class = "btn btn-primary" })
     </p>
+
+    <p>
+        To view the list of every recipe: @Html.ActionLink("Click here", "index", "Community", null, new { @class = "btn btn-primary" })
+    </p>
+
+    <p>
+        To view a list of all the users that have submitted recipes: @Html.ActionLink("Click here", "index", "Users", null, new { @class = "btn btn-primary" })
+    </p>
+
 </div>
 
 

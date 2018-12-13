@@ -1,6 +1,44 @@
 ﻿
 # Dev notes
 
+**12/12**
+```
+> Users index now queries and renders all users instead of 
+     just looping through every recipes (eliminated duplicates).
+```
+
+**12/11**
+```
+> Installed Mapper
+> Setup MappingProfile in App_Start to use Dto->obj and obj->dto
+> Created Dtos folder and RecipeDtos.cs
+> Automapper is set and Dtos are in place within the Recipes API
+> CamelCasing is setup in WebApiConfig.cs class
+
+```
+
+**12/8 - 12/10**
+```
+> Lots of trial and error to get viewmodels working with rendering lists to tables
+> Finally rendered successfully with users view index.cshtml
+```
+
+**12/7/2018**
+```
+> completed basic linking and rendering of users recipe information
+   in userRecipe page
+> completed basic linking and rendering of Recipe edit form from recipelist
+```
+
+**12/6/2018**
+```
+> Mostly mental organization
+> Next steps:
+   set up DTOs and automapper?
+   get bootbox plugin
+
+```
+
 **12/4/2018**
 ```
 > Recipes api written for GET, POST, PUT, and DELETE

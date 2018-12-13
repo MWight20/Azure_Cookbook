@@ -28,8 +28,6 @@ namespace My_Cookbook.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        //[Range(0, 5)]
-        //public int? Rating { get; set; }
 
         public RecipeType RecipeType { get; set; }
         
@@ -46,6 +44,11 @@ namespace My_Cookbook.Models
         
         public string Ingredients { get; set; }
 
+        public string Username { get; set; }
+
+        //[Range(0, 5)]
+        //public int? Rating { get; set; }
+
         //[display(name = "date created")]
         //[displayformat(dataformatstring = "{0: mmm d yyyy}", applyformatineditmode = true)]
         //public datetime? datecreated { get; set; }
@@ -54,7 +57,7 @@ namespace My_Cookbook.Models
 
         //public int UserID { get; set; }
 
-        public string Username { get; set; }
+
 
 
 
