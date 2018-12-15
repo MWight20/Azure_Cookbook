@@ -1,6 +1,12 @@
 ﻿
 # Dev notes
 
+**12/14**
+```
+> table data through API is succesfully being called with JQuery
+> DataTables plugin working correctly with table data
+```
+
 **12/12**
 ```
 > Users index now queries and renders all users instead of 
