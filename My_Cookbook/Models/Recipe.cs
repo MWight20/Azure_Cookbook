@@ -34,16 +34,21 @@ namespace My_Cookbook.Models
         [Display(Name = "Recipe Type")]
         public int RecipeTypeId { get; set; }
 
+        [Required]
         public int PrepTime { get; set; } //Time in minutes
 
+        [Required]
         public int CookTime { get; set; } //Time in minutes
         
+        [Required]
         public string Description { get; set; }
 
+        [Required]
         public string Directions { get; set; }
         
+        [Required]
         public string Ingredients { get; set; }
-
+        
         public string Username { get; set; }
 
         //[Range(0, 5)]

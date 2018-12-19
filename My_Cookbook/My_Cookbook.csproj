@@ -212,6 +212,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\Api\RecipesController.cs" />
+    <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -244,6 +245,10 @@
     <Compile Include="Migrations\201812040034198_removedApplicationUserAndDateCreated.cs" />
     <Compile Include="Migrations\201812040034198_removedApplicationUserAndDateCreated.Designer.cs">
       <DependentUpon>201812040034198_removedApplicationUserAndDateCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812152338027_AddedRequiredRecipeModelAnnotations.cs" />
+    <Compile Include="Migrations\201812152338027_AddedRequiredRecipeModelAnnotations.Designer.cs">
+      <DependentUpon>201812152338027_AddedRequiredRecipeModelAnnotations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -423,6 +428,8 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\Images\1430237-healthy-eating-life-food-photograph-style-photocase-stock-photo-large.jpeg" />
+    <Content Include="Content\Images\Book-icon-sm.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -604,6 +611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812040034198_removedApplicationUserAndDateCreated.resx">
       <DependentUpon>201812040034198_removedApplicationUserAndDateCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812152338027_AddedRequiredRecipeModelAnnotations.resx">
+      <DependentUpon>201812152338027_AddedRequiredRecipeModelAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

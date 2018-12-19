@@ -25,6 +25,8 @@ namespace My_Cookbook.Controllers.Api
             return _context.Recipes.ToList().Select(Mapper.Map<Recipe,RecipeDto>);
         }
 
+        
+
         // GET /api/recipes/1
         public IHttpActionResult GetRecipe(int id)
         {

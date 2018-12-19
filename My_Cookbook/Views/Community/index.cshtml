@@ -6,7 +6,7 @@
 }
 
 <h2>Community Recipe List</h2>
-
+<br/>
 <div class="RecipeSubmit">
     <p>
         Click here to submit a new recipe:
@@ -21,7 +21,7 @@
             <th>Name</th>
             <th>Submitted By</th>
             <th>Description</th>
-            <th>Delete</th>
+            <th></th>
 
         </tr>
     </thead>
@@ -54,7 +54,7 @@
                     {
                         data: "name",
                         render: function (data, type, recipe) {
-                            return "<a href='/recipes/Details/" + recipe.id + "'>" + recipe.name + "</a>";
+                            return "<a href='/recipe/Details/" + recipe.id + "'>" + recipe.name + "</a>";
                         }
                     },
                     {
@@ -69,7 +69,7 @@
                     {
                         data: "id",
                         render: function (data) {
-                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
+                            return "<button class='btn btn-danger js-delete' data-customer-id=" + data + ">Delete</button>";
                         }
                     }
                 ]

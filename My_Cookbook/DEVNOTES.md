@@ -1,6 +1,19 @@
 ﻿
 # Dev notes
 
+**12/18**
+```
+> lots of basic styling and reformatting
+> background image added
+> cookbook icon added
+```
+
+
+**12/15**
+```
+> UsersList has datatables rendering
+```
+
 **12/14**
 ```
 > table data through API is succesfully being called with JQuery

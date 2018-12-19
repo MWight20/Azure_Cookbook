@@ -8213,3 +8213,9 @@ button.close {
         color: #fff;
     }
 }
+
+
+#usernameTable.table {
+    margin: auto;
+    width: 70%;
+}

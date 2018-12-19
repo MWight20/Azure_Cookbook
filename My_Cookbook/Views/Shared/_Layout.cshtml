@@ -6,19 +6,28 @@
     <title>@ViewBag.Title - My Cookbook</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
-<body>
-    @Html.Partial("_NavBar")
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Azure Cookbook</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/lib")
-    @RenderSection("scripts", required: false)
+<body>
+    <div class="page">
+        
+        <div class="pageBody">
+            @Html.Partial("_NavBar")
+            <div class="container body-content">
+                @RenderBody()
+                
+            </div>
+
+            <div class="footer">
+                @DateTime.Now.Year - Azure Cookbook - Application created by Michael Wight
+            </div>
+            @Scripts.Render("~/bundles/lib")
+            @RenderSection("scripts", required: false)
+        </div>
+    </div>
+    
+   
 </body>
+
+
 </html>

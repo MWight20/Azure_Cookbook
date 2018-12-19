@@ -2,14 +2,13 @@
 
 baseline todo:
 ```
-> get bootbox plugin
-> render tables through API rather than database viewmodels
 > Stylize views
 ```
 
 Extended features and refactors:
 ```
-> Comments/review (3.0)
+> Comments/review
+> Upload a picture for recipe
 > Login account connected to recipes created
 ```
 

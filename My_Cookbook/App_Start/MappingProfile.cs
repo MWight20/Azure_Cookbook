@@ -14,8 +14,7 @@ namespace My_Cookbook.App_Start
         {
             Mapper.CreateMap<Recipe, RecipeDto>();
             Mapper.CreateMap<RecipeDto, Recipe>();
-
-
+            
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using My_Cookbook.Models;
 using My_Cookbook.ViewModels;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace My_Cookbook.Controllers
 {
@@ -36,7 +37,7 @@ namespace My_Cookbook.Controllers
 
             //no duplicates
             List<string> distinctuserList = UserList.Distinct().ToList();
-            
+           
             var viewModel = new UsersViewModel(distinctuserList);
 
             return View(viewModel);
