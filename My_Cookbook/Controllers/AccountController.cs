@@ -152,7 +152,21 @@ namespace My_Cookbook.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Username, Email = model.Email };
+                //do stuff with modelview data here before initializing applicationUser
+                var RegisterUserName = "";
+                if ( model.Username == "" || model.Username == null)
+                {
+                    RegisterUserName = model.Email;
+                }
+                else
+                {
+                    RegisterUserName = model.Username;
+                }
+
+
+                //
+
+                var user = new ApplicationUser { UserName = RegisterUserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -576,6 +576,9 @@
     <Content Include="Views\Recipe\RecipeForm.cshtml" />
     <Content Include="Views\Users\UserRecipe.cshtml" />
     <Content Include="Views\Recipe\RecipeDetails.cshtml" />
+    <Content Include="Views\Users\ProfilePage.cshtml" />
+    <Content Include="Views\Recipe\RecipeDetailsReadOnly.cshtml" />
+    <Content Include="Views\Users\UserRecipeEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

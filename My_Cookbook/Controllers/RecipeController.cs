@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using My_Cookbook.Models;
 using My_Cookbook.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace My_Cookbook.Controllers
 {
@@ -26,7 +27,7 @@ namespace My_Cookbook.Controllers
         // GET: Recipe
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("index", "Community");
         }
 
         // GET: Recipe/Details/username
@@ -46,11 +47,26 @@ namespace My_Cookbook.Controllers
             {
                 return HttpNotFound();
             }
-               
-            return View("RecipeDetails", recipe);
+
+            //get logged in user's username
+            var loggedInUser = User.Identity.GetUserName();
+
+            //direct to appropriate page
+            if (recipe.Username == loggedInUser)
+            {
+                return View("RecipeDetails", recipe);
+            }
+            else
+            {
+                return View("RecipeDetailsReadOnly", recipe);
+            }
+            
+
+            
+
         }
 
-        // New Recipe button
+        // New Recipe 
         public ViewResult New()
         {
             var recipeTypes = _context.RecipeTypes.ToList();
@@ -62,7 +78,7 @@ namespace My_Cookbook.Controllers
             return View("RecipeForm", viewModel);
         }
 
-        // 
+        // Create recipe in DB
         public ActionResult Create(Recipe recipe)
         {
             _context.Recipes.Add(recipe);
@@ -86,9 +102,14 @@ namespace My_Cookbook.Controllers
 
             if (recipe.Id == 0) //doesn't already exist in DB
             {
-                if (recipe.Username == "" || recipe.Username == null)
+
+                if (User.Identity.GetUserId() == null || User.Identity.GetUserName() == "" )
                 {
                     recipe.Username = "Anonymous";
+                }
+                else //if the current user is not null
+                {
+                    recipe.Username = User.Identity.GetUserName();
                 }
 
                 _context.Recipes.Add(recipe);

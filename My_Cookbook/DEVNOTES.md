@@ -1,6 +1,26 @@
 ﻿
 # Dev notes
 
+**12/20**
+```
+> Removed edit and delete functionality for all anonymous users
+
+> Implemented comparison logic of recipe usernames to
+    Users.Identity.Username
+
+> Created separate pages for Recipe details
+    >> Recipe owners can edit or delete their recipe
+    >> Everybody else has readonly versions
+
+> Similarly created separate pages for userRecipe pages
+
+> When submitting a recipe, No longer need to submit a custom username
+    >> Either logged in username or "Anonymous" for guest submissions
+
+> Added a "Profile" page for a logged in user
+    >> contains a link to identity's account settings view.
+```
+
 **12/18**
 ```
 > lots of basic styling and reformatting

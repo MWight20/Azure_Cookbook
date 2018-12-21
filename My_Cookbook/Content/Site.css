@@ -19,7 +19,9 @@ h2 {
     right:0;
     bottom:5px;
     left:0;
+    margin-top: 10px;
 }
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {

@@ -78,8 +78,8 @@ namespace My_Cookbook.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [Display(Name = "Username")]
+        //[Required]
+        [Display(Name = "Username (optional)")]
         public string Username { get; set; }
 
         [Required]

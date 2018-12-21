@@ -7,6 +7,7 @@ using My_Cookbook.Models;
 using My_Cookbook.ViewModels;
 using System.Data.Entity;
 using System.Diagnostics;
+using Microsoft.AspNet.Identity;
 
 namespace My_Cookbook.Controllers
 {
@@ -43,16 +44,38 @@ namespace My_Cookbook.Controllers
             return View(viewModel);
         }
 
+        // UserRecipe
         public ActionResult UserRecipe(string userName)
         {
             var targetUserRecipes = _context.Recipes.Include(c => c.RecipeType).Where(s => s.Username == userName).ToList();
+            
 
             ViewBag.TargetUser = userName;
 
             if (targetUserRecipes == null)
                 return HttpNotFound();
 
-            return View(targetUserRecipes);
+            //get logged in user's username
+
+            var loggedInUser = User.Identity.GetUserName();
+
+            //direct to appropriate page
+            if (userName == loggedInUser)
+            {
+                return View("UserRecipeEdit", targetUserRecipes);
+            }
+            else
+            {
+                return View("UserRecipe", targetUserRecipes);
+            }
+            
+        }
+
+        public ActionResult ProfilePage()
+        {
+
+
+            return View("ProfilePage");
         }
     }
 }

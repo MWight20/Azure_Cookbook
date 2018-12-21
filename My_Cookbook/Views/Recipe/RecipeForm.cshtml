@@ -54,11 +54,7 @@
         @Html.ValidationMessageFor(m => m.Ingredients)
     </div>
     //Username
-    <div class="form-group">
-        @Html.LabelFor(m => m.Username)
-        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Username)
-    </div>
+    @Html.HiddenFor(m=> m.Username)
 
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
