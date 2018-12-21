@@ -3,7 +3,7 @@
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 30px;
     /*padding-bottom: 20px;*/
 }
 
@@ -25,10 +25,11 @@ h2 {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    padding-top: 30px;
     /*padding-left: 15px;
     padding-right: 15px;*/
-    padding-left: 10%;
-    padding-right: 10%;
+    /*padding-left: 10%;
+    padding-right: 10%;*/
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -90,3 +91,23 @@ table#username.table {
     width: 700px;
 }
 
+.container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#RecipeNameRow {
+    height: 250px;
+    margin-top: 20px;
+}
+
+#RecipeImage {
+    background-color: black;
+    height: 250px;
+    width: 585px;
+}
+
+#ImageText {
+    color: white;
+    margin: auto;
+}

@@ -6,41 +6,20 @@
 
 <h2>List of users</h2>
 <br/>
-<table id="usernameTable" class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ( var users in Model.UsersList)
-        {
-            <tr>
-                <td>@Html.ActionLink(users, "userrecipe", "users", new { username = users }, null) </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-@section scripts
-{
-    <script>
-        //$(document).ready(function () {
-        //    $("#usernameTable").DataTable({
-        //        ajax: {
-        //            url: "/api/user",
-        //            dataSrc: ''
-        //        },
-        //        columns: [
-        //            {
-        //                //data: "",
-        //                render: function (data, type, recipe) {
-        //                    return "<a href='/Users/UserRecipe?username=" + data + "'>" + data + "</a>";
-        //                }
-        //            }
-        //        ]
-        //    });
-        //});
-        
-    </script>
-}
+<div class="container">
+        <table id="usernameTable" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var users in Model.UsersList)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(users, "userrecipe", "users", new { username = users }, null) </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>

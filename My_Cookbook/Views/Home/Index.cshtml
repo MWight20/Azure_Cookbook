@@ -3,26 +3,21 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<div>
-    <h2>Home page</h2>
-    <p>
-        @ViewBag.UserName
-    </p>
+<h2>Home page</h2>
+<div class="container">
+        <p>
+            To submit a new recipe: @Html.ActionLink("Click here", "New", "Recipe", null, new { @class = "btn btn-primary" })
+        </p>
+
+        <p>
+            To view the list of every recipe: @Html.ActionLink("Click here", "index", "Community", null, new { @class = "btn btn-primary" })
+        </p>
+
+        <p>
+            To view a list of all the users that have submitted recipes: @Html.ActionLink("Click here", "index", "Users", null, new { @class = "btn btn-primary" })
+        </p>
 </div>
-<div class="RecipeSubmit">
-    <p>
-        To submit a new recipe: @Html.ActionLink("Click here", "New", "Recipe", null, new { @class = "btn btn-primary" })
-    </p>
 
-    <p>
-        To view the list of every recipe: @Html.ActionLink("Click here", "index", "Community", null, new { @class = "btn btn-primary" })
-    </p>
-
-    <p>
-        To view a list of all the users that have submitted recipes: @Html.ActionLink("Click here", "index", "Users", null, new { @class = "btn btn-primary" })
-    </p>
-
-</div>
 
 
 @*<div class="jumbotron">

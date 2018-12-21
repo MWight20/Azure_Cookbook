@@ -4,18 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Profile</h2>
-@if (Request.IsAuthenticated)
-{
-    <p>
-        Click here to access your @Html.ActionLink("account settings.", "Index", "Manage", routeValues: null, htmlAttributes: new { })
-    </p>
-}
-else
-{
-    <p>
-        Oops! You're not currently logged in to a user account. If you have an account, you must login to access your user settings. Otherwise, you must register as a new user!
-    </p>
-}
+<div class="container">
+
+    <h2>Profile</h2>
+    <br />
+    @if (Request.IsAuthenticated)
+    {
+        <p>
+            Click here to access your @Html.ActionLink("account settings.", "Index", "Manage", routeValues: null, htmlAttributes: new { })
+        </p>
+    }
+    else
+    {
+        <p>
+            Oops! You're not currently logged in to a user account. If you have an account, you must login to access your user settings. Otherwise, you must register as a new user!
+        </p>
+    }
+</div>
 
 

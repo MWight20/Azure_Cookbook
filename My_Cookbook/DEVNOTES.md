@@ -1,6 +1,12 @@
 ﻿
 # Dev notes
 
+**12/21**
+```
+> Designed Recipe Details page with bootstrap grids
+> Modified layout to not include div class container. Placed into views manually to give customized options for margin spacing.(possibly revert this or refactor).
+```
+
 **12/20**
 ```
 > Removed edit and delete functionality for all anonymous users

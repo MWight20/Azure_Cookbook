@@ -3,19 +3,58 @@
     ViewBag.Title = "RecipeDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container" id="RecipeDetails">
 
-<h2>RecipeDetails </h2>
+    <div class="row" id="RecipeNameRow">
 
+        <div id="RecipeInfo" class="col-md-6">
+            <h3> @Model.Name</h3>
 
+            <p>Recipe created by: @Model.Username</p>
+            <p>Description: @Model.Description</p>
+        </div>
 
+        <div id="RecipeImage" class="col-md-6">
 
+            <p id="ImageText">
+                [IMAGE PLACEHOLDER]
+            </p>
+        </div>
 
-<li>Name:@Model.Name</li>
-<li>Description: @Model.Description</li>
-<li>Ingredients: @Model.Ingredients</li>
-<li>Directions: @Model.Directions</li>
+    </div>
+    <br />
+    <div class="row" id="RecipeIngredientsRow">
 
-<br />
+        <div class="col-md-6">
+            <h3>Ingredients</h3>
+        </div>
+        <div class="col-md-6">
+            <h4>Prep time: @Model.PrepTime min.</h4>
+            <h4>Cook time: @Model.CookTime min.</h4>
+        </div>
+        <div class="col-md-12">
+            <hr style="margin-top:-5px;" />
+            <p>
+                @Model.Ingredients
+            </p>
+        </div>
+
+    </div>
+    <br />
+    <div class="row" id="RecipeDirectionsRow">
+        <div class="col-md-12">
+            <h3>Directions</h3>
+        </div>
+
+        <div class="col-md-12">
+            <hr style="margin-top:-5px;" />
+            <p>
+                @Model.Directions
+            </p>
+        </div>
+    </div>
+</div>
+
 @Html.ActionLink("Edit this recipe", "Edit", "Recipe", new { id = Model.Id }, new { @class = "btn btn-primary edit-button" })
 
 

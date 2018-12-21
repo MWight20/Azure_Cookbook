@@ -13,6 +13,7 @@ baseline todo:
 > Client-side validation?
 > Add admin capabilities 
 > Change website name from localhost to azurecookbook.com/
+> Eliminate anonymous submissions for recipes?
 ```
 
 Extended features and refactors:
