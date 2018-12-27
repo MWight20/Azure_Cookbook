@@ -13,6 +13,7 @@
     <div id="recipes">
         <h1> @Html.ActionLink(recipe.Name, "Details", "recipe", new { id = recipe.Id }, null)</h1>
         @recipe.Description
+        <br />
         <button class='btn btn-danger js-delete' data-recipe-id=@recipe.Id>Delete</button>
     </div>
 }

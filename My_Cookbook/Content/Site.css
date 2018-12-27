@@ -111,3 +111,7 @@ table#username.table {
     color: white;
     margin: auto;
 }
+
+textarea {
+   max-width: 60%;
+}
