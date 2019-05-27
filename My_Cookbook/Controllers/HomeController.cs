@@ -21,7 +21,7 @@ namespace My_Cookbook.Controllers
             
             
 
-            return View();
+            return RedirectToAction("index", "Community");
         }
 
         public ActionResult About()

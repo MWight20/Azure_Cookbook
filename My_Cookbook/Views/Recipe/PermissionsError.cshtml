@@ -1,0 +1,19 @@
+﻿@model My_Cookbook.Models.Recipe
+@{
+    ViewBag.Title = "PermissionsError";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PermissionsError...</h2>
+
+<br />
+<div>
+    <p style="text-align:center">
+    @ViewBag.Message
+    <br />
+    <button class="btn"><a href='/recipe/Details/@Model.Id'>Click here to return to the previous page</a></button>
+    </p>
+</div>
+    
+    
+

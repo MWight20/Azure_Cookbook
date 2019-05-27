@@ -1,33 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My Cookbook</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My Cookbook</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
 
-<body>
-    <div class="page">
-        
-        <div class="pageBody">
+    <body>
+        <div class="site-body">
             @Html.Partial("_NavBar")
             <div class="body-content container">
                 @RenderBody()
-                
             </div>
 
-            <div class="footer">
-                @DateTime.Now.Year - Azure Cookbook - Application created by Michael Wight
-            </div>
             @Scripts.Render("~/bundles/lib")
             @RenderSection("scripts", required: false)
         </div>
-    </div>
-    
-   
-</body>
-
-
+    </body>
 </html>

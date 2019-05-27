@@ -48,6 +48,13 @@ namespace My_Cookbook.Controllers
                 return HttpNotFound();
             }
 
+            var DirectionsArr = recipe.Directions.Replace("\r\n", "`").Split('`');
+            var IngredientsArr = recipe.Ingredients.Replace("\r\n", "`").Split('`');
+
+            ViewBag.DirectionsArr = DirectionsArr;
+            ViewBag.IngredientsArr = IngredientsArr;
+            
+
             //get logged in user's username
             var loggedInUser = User.Identity.GetUserName();
 
@@ -60,10 +67,6 @@ namespace My_Cookbook.Controllers
             {
                 return View("RecipeDetailsReadOnly", recipe);
             }
-            
-
-            
-
         }
 
         // New Recipe 
@@ -137,12 +140,21 @@ namespace My_Cookbook.Controllers
         // Edit existing recipe
         public ActionResult Edit(int id)
         {
+            var loggedInUser = User.Identity.GetUserName();
             var recipe = _context.Recipes.SingleOrDefault(c => c.Id == id);
+            
+            if (loggedInUser != recipe.Username || loggedInUser == null)
+            {
+                ViewBag.Message = "You don't have permissions to edit this recipe!";
+                return View("PermissionsError", recipe);
+            }
 
             if (recipe == null)
             {
                 return HttpNotFound();
             }
+
+
 
             var viewModel = new RecipeFormViewModel(recipe)
             {

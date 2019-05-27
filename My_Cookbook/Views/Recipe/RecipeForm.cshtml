@@ -1,63 +1,70 @@
 ﻿@model My_Cookbook.ViewModels.RecipeFormViewModel
 
 @{
-    /**/
-
-    ViewBag.Title = "RecipeForm";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+                ViewBag.Title = "RecipeForm";
+                Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RecipeForm</h2>
-
+<h2 style="text-align:left">Give us some details...</h2>
+<p>
+    What's your recipe all about? Tell us some details about what you need and how you make it!
+</p>
+<br />
 @using (Html.BeginForm("Save", "Recipe"))
 {
-    //name
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Name)
-    </div>
-    //recipeType
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.DropDownListFor(m => m.RecipeTypeId, new SelectList(Model.RecipeTypes, "Id", "Name"), "Select Recipe Type", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Name)
-    </div>
-    //prep time
-    <div class="form-group">
-        @Html.LabelFor(m => m.PrepTime)
-        @Html.TextBoxFor(m => m.PrepTime, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.PrepTime)
-    </div>
-    //cook time
-    <div class="form-group">
-        @Html.LabelFor(m => m.CookTime)
-        @Html.TextBoxFor(m => m.CookTime, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CookTime)
-    </div>
-    //description
-    <div class="form-group">
-        @Html.LabelFor(m => m.Description)
-        @Html.TextAreaFor(m => m.Description, new { @class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Description)
-    </div>
-    //directions
-    <div class="form-group">
-        @Html.LabelFor(m => m.Directions)
-        @Html.TextAreaFor(m => m.Directions, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Directions)
-    </div>
-    //ingredients
-    <div class="form-group">
-        @Html.LabelFor(m => m.Ingredients)
-        @Html.TextAreaFor(m => m.Ingredients, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Ingredients)
-    </div>
-    //Username
-    @Html.HiddenFor(m=> m.Username)
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.RecipeTypeId)
+                @Html.DropDownListFor(m => m.RecipeTypeId, new SelectList(Model.RecipeTypes, "Id", "Name"), "Select Recipe Type", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PrepTime)
+                @Html.TextBoxFor(m => m.PrepTime, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PrepTime)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CookTime)
+                @Html.TextBoxFor(m => m.CookTime, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CookTime)
+            </div>
+            <br />
+            <br />
+            <br />
+            <Button type="submit" class="btn btn-primary">Submit</Button>
+        </div>
 
-    @Html.HiddenFor(m => m.Id)
-    @Html.AntiForgeryToken()
-    <Button type="submit" class="btn btn-primary">Submit</Button>
+        <div class="col-lg-8">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description)
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @rows = "3" })
+                @Html.ValidationMessageFor(m => m.Description)
+            </div>
 
+            <div class="form-group">
+                @Html.LabelFor(m => m.Directions)
+                @Html.TextAreaFor(m => m.Directions, new { @class = "form-control", @rows = "5" })
+                @Html.ValidationMessageFor(m => m.Directions)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Ingredients)
+                @Html.TextAreaFor(m => m.Ingredients, new { @class = "form-control", @rows = "5" })
+                @Html.ValidationMessageFor(m => m.Ingredients)
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.Username)
+
+        @Html.HiddenFor(m => m.Id)
+        @Html.AntiForgeryToken()
+
+    </div>
+    
+    
 }

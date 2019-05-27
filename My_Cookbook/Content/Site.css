@@ -2,34 +2,40 @@
     height: 100%;
 }
 
-body {
-    padding-top: 30px;
-    /*padding-bottom: 20px;*/
+#navbar {
+    margin-bottom: 0px;
 }
 
-
+body {
+    /*padding-top: 30px; */
+    /*padding-bottom: 20px;*/
+}
 
 h2 {
     text-align: center;
 }
 
-.footer {
-    text-align: center;
-    position:absolute;
-    right:0;
-    bottom:5px;
-    left:0;
-    margin-top: 10px;
+.site-body {
+    margin-bottom:40px;
 }
 
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
 
-/* Set padding to keep content from hitting the edges */
+.footer {
+    text-align: center;
+    position: fixed;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    padding-top: 10px;
+}
+
 .body-content {
-    padding-top: 30px;
-    /*padding-left: 15px;
-    padding-right: 15px;*/
-    /*padding-left: 10%;
-    padding-right: 10%;*/
+    margin-top: 80px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -54,27 +60,20 @@ textarea {
     border: 2px solid red;
 }
 
-.page {
-    background-color: #e3e4e5;
-    height: 100%;
-    background-image:url("Images/1430237-healthy-eating-life-food-photograph-style-photocase-stock-photo-large.jpeg");
-    background-size:110%;
+#navbar-home {
+    color: white;
+    text-decoration:none;
 }
-
-.pageBody {
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color:white;
-    height: 100%;
-}
-
-
 .navbar-brand{
     font-weight: bold;
 }
 
 .navbar-header {
     padding-right: 20px;
+}
+
+.navbar-nav {
+    margin-left: 10px;
 }
 
 .navbar-collapse, collapse {
@@ -96,22 +95,12 @@ table#username.table {
     flex-wrap: wrap;
 }
 
-#RecipeNameRow {
-    height: 250px;
-    margin-top: 20px;
-}
-
-#RecipeImage {
-    background-color: black;
-    height: 250px;
-    width: 585px;
-}
-
 #ImageText {
     color: white;
     margin: auto;
 }
 
 textarea {
-   max-width: 60%;
+   max-width: 80%;
 }
+

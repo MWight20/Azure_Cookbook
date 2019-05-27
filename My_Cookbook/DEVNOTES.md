@@ -1,6 +1,14 @@
 ﻿
 # Dev notes
 
+
+**5/27/2019**
+```
+> Began rehaul on CSS
+> Needs continued work on responsive css design for community recipe list and users list
+> CSS for account settings and profile page need to get started.
+```
+
 **12/21**
 ```
 > Designed Recipe Details page with bootstrap grids

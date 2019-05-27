@@ -1,23 +1,20 @@
 ﻿<div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div id="navbar" class="container">
         <div class="navbar-header">
+            
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="@Url.Action("Index", "Home")"><img src="~/Content/Images/Book-icon-sm.png" id="book-icon" /></a>
+            <a href="@Url.Action("Index", "Home")" id="navbar-home">  <img src="~/Content/Images/Book-icon-sm.png" id="book-icon" /> <strong>Azure Cookbook</strong></a>
         </div>
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                @Html.ActionLink("Azure Cookbook", "Index", "Home", new { @style = "" }, new { @class = "navbar-brand" })
-                @*<li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-        <li>@Html.ActionLink("Community", "Index", "Community")</li>*@
-                <li>@Html.ActionLink("Recipes list", "Index", "Community")</li>
+                @*<li>@Html.ActionLink("Azure Cookbook", "Index", "Community", new { @style = "" }, new { @class = "navbar-brand" })</li>*@
                 <li>@Html.ActionLink("Users", "Index", "Users")</li>
-
+                <li>@Html.ActionLink("About", "About", "Home")</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

@@ -579,6 +579,7 @@
     <Content Include="Views\Users\ProfilePage.cshtml" />
     <Content Include="Views\Recipe\RecipeDetailsReadOnly.cshtml" />
     <Content Include="Views\Users\UserRecipeEdit.cshtml" />
+    <Content Include="Views\Recipe\PermissionsError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
