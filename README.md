@@ -1,4 +1,6 @@
-﻿# ABOUT "My_Cookbook"/"Azure Cookbook"
+UPDATE: Database configuration needs correction. Currently missing critical files which won't allow data to function correctly on webpage
+
+# ABOUT "My_Cookbook"/"Azure Cookbook"
 
 **What is this app used for?**
 
