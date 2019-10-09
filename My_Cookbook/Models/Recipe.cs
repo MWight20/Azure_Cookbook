@@ -51,6 +51,8 @@ namespace My_Cookbook.Models
         
         public string Username { get; set; }
 
+        public virtual ICollection<Comment> Comments { get; set; }
+
         //[Range(0, 5)]
         //public int? Rating { get; set; }
 

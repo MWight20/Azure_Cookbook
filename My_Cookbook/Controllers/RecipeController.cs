@@ -42,6 +42,10 @@ namespace My_Cookbook.Controllers
         public ActionResult Details(int id)
         {
             var recipe = _context.Recipes.SingleOrDefault(c => c.Id == id);
+            var viewModel = new RecipeViewModel(recipe)
+            {
+                
+            };
 
             if (recipe == null)
             {
@@ -61,11 +65,11 @@ namespace My_Cookbook.Controllers
             //direct to appropriate page
             if (recipe.Username == loggedInUser)
             {
-                return View("RecipeDetails", recipe);
+                return View("RecipeDetails", viewModel);
             }
             else
             {
-                return View("RecipeDetailsReadOnly", recipe);
+                return View("RecipeDetailsReadOnly", viewModel);
             }
         }
 
@@ -163,5 +167,36 @@ namespace My_Cookbook.Controllers
 
             return View("RecipeForm", viewModel);
         }
+
+        [HttpPost]
+        public ActionResult Comment(Comment comment)
+        {
+            var recipe = _context.Recipes.SingleOrDefault(c => c.Id == 8);
+            //create a new comment
+            Console.WriteLine(recipe);
+            var commentToPass = new Comment()
+            {
+                Author = "mwight20@gmail.com",
+                Body = "Test",
+                PostId = 2,
+                Recipe = recipe
+            };
+
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("invalid");
+                return RedirectToAction("Index", "Community");
+            }
+            else
+            {
+                _context.Comments.Add(commentToPass);
+                _context.SaveChanges();
+                Console.WriteLine("saved successfully");
+                return RedirectToAction("Index", "Community");
+            }
+           
+            
+        }
+
     }
 }
